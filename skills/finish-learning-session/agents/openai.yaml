@@ -1,0 +1,4 @@
+interface:
+  display_name: "Finish Learning Session"
+  short_description: "Record learning and prepare team escalation"
+  default_prompt: "Use $finish-learning-session to close this session, update my log, and prepare a Slack summary if useful."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mentor Coding"
+  short_description: "Coach a coding task without taking it over"
+  default_prompt: "Use $mentor-coding to guide me through this coding task without solving it for me."

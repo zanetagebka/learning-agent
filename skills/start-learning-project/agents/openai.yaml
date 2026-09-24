@@ -1,0 +1,4 @@
+interface:
+  display_name: "Start Learning Project"
+  short_description: "Set up a learning-first project journey"
+  default_prompt: "Use $start-learning-project to set up this repository for mentored learning."

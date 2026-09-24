@@ -1,0 +1,9 @@
+# Per-developer agent preferences and private learning state
+AGENTS.local.md
+docs/*.local.md
+
+# Generated Slack summaries contain personal reflection
+docs/learning-summaries/*.json
+
+# Editor metadata
+.idea/
