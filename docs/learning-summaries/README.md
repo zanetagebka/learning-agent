@@ -21,9 +21,11 @@ The agent writes exactly these five top-level fields:
 }
 ```
 
-All five top-level fields must be present. `learned` needs at least one item;
-`practiced` and `difficulties` may be empty arrays. `support.question` is
-required only when support is needed.
+All five top-level fields must be present. `learned`, `practiced`, and
+`difficulties` may be empty arrays; any items must be non-blank strings. Use
+`"learned": []` when the learner has no confirmed insight, including a blocked
+session that needs human support. Do not invent progress to fill the list.
+`support.question` is required only when support is needed.
 
 All prose must come from the learner's confirmed reflection. Do not include
 source code, diffs, repository contents, conversations, quiz answers,

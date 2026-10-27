@@ -49,10 +49,14 @@ class SummaryValidatorTest < Minitest::Test
     assert_empty problems_for(valid_summary)
   end
 
+  def test_accepts_no_confirmed_learning
+    assert_empty problems_for(valid_summary.merge("learned" => []))
+  end
+
   def test_reports_required_contract_problems_together
     summary = {
       "session" => {},
-      "learned" => [],
+      "learned" => [" "],
       "practiced" => "refactoring",
       "difficulties" => [" "],
       "support" => {}
@@ -60,7 +64,7 @@ class SummaryValidatorTest < Minitest::Test
     problems = problems_for(summary).join("\n")
 
     assert_includes problems, "session.topic"
-    assert_includes problems, "learned must contain at least one item"
+    assert_includes problems, "learned must contain only non-blank strings"
     assert_includes problems, "practiced is required and must be an array"
     assert_includes problems, "difficulties must contain only non-blank strings"
     assert_includes problems, "support.needed"
@@ -161,6 +165,22 @@ end
 
 class CliTest < Minitest::Test
   include SummaryFixture
+
+  def test_previews_support_request_without_confirmed_learning
+    summary = valid_summary.merge("learned" => [])
+    with_summary_file(JSON.generate(summary)) do |path|
+      out = StringIO.new
+      err = StringIO.new
+
+      status = main([path], out: out, err: err, env: { LEARNER_ENV => "Jane Doe" })
+
+      assert_equal 0, status
+      assert_empty err.string
+      refute_includes out.string, "*Learned*"
+      assert_includes out.string, summary.dig("support", "question")
+      assert_includes out.string, "nothing was sent"
+    end
+  end
 
   def test_default_mode_previews_without_a_webhook
     with_summary_file do |path|

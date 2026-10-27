@@ -99,9 +99,11 @@ The help level increases only when the learner asks:
 An implementation request is scoped to that step. It is not permanent
 permission for the agent to complete the feature or make architecture choices.
 
-Sessions begin with retrieval from earlier work and end with evidence. Passing
-code is recorded separately from the learner's own explanation; neither is
-treated as proof of the other.
+Learning exercises begin with retrieval from earlier work. Direct reviews and
+diagnostic requests begin with findings or focused checks; retrieval questions
+are optional when useful. Sessions end with evidence. Passing code is recorded
+separately from the learner's own explanation; neither is treated as proof of
+the other.
 
 ## Slack escalation
 

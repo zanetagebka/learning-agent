@@ -25,10 +25,15 @@ Read the minimum useful context:
 Do not require broad repository reading for a narrow task. Separate what the
 repository proves from what the learner says or assumes.
 
-At the first task interaction of a session, ask one open retrieval question
-about a relevant earlier decision or data flow, then wait. Give no hint inside
-the question. If no earlier work is recorded, ask the learner to predict the
-current data or control flow instead.
+At the first task interaction of a session focused on a learning exercise,
+ask one open retrieval question about a relevant earlier decision or data flow,
+then wait. Give no hint inside the question. If no earlier work is recorded,
+ask the learner to predict the current data or control flow instead.
+
+For a direct code review or diagnostic request, begin with relevant findings
+or the smallest discriminating checks. A retrieval question is optional when
+it helps the task; do not make it a prerequisite for useful feedback. These
+requests do not authorize implementation.
 
 ## Agree on the learning unit
 

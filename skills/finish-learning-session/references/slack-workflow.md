@@ -38,6 +38,8 @@ Follow these syntax rules strictly:
 - Use lowercase JSON booleans `true` and `false`, never quoted booleans.
 - Keep `learned`, `practiced`, and `difficulties` as arrays of strings; use
   `[]` when there are no items.
+- If the learner has no confirmed insight, use `"learned": []`, including
+  when requesting help with a blocked session. Never invent learning progress.
 - When `support.needed` is `true`, add a non-blank `support.question` string.
 - Do not add comments, Markdown fences, trailing commas, or repository data to
   the JSON file.

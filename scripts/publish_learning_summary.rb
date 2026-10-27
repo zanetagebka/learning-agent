@@ -59,7 +59,6 @@ class SummaryValidator
     return ["#{key} is required and must be an array"] unless value.is_a?(Array)
 
     problems = []
-    problems << "learned must contain at least one item" if key == "learned" && value.empty?
     problems << "#{key} must contain only non-blank strings" unless value.all? { |item| present_string?(item) }
     problems
   end
